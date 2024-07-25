@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lavender;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.envelope {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background-color: #4C0013;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    overflow: visible;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-flap {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: #ccc;
+    top: 0;
+    transform-origin: top;
+    transition: transform 0.5s;
+    z-index: 2;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+.bottom-flap {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: #ccc;
+    bottom: 0;
+    clip-path: polygon(0 0, 0% 0, 0% 0%);
+}
+
+.letter {
+    position: absolute;
+    background-color: #fff;
+    top: 100px; /* Position below the top flap */
+    left: 0; /* Align to the left edge */
+    border: 2px solid #ccc;
+    transition: transform 1s, opacity 0.5s;
+    transform-origin: top center;
+    transform: translateY(0); 
+    opacity: 0; 
+    z-index: 1;
+}
+
+.letter img {
+    display: block;
+    width: 570px; 
+    height: 700px;
+}
+
+
+.envelope.open .letter {
+    transform: translateY(-100px); 
+    opacity: 1; 
+}
+
+.envelope.open .top-flap {
+    transform: rotateX(-180deg);
+}
+
+.content {
+    padding: 20px;
+}
