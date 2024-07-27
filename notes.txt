@@ -1,0 +1,7 @@
+const validNames = [
+                    "Aniket Das", "Arnab Laha", "Atika Tasnim", "Ayan Pal", "Ditu Dey", 
+                    "Iradri Das", "Jeet Biswas", "Kartick Saren", "Prosenjit Mondal", "Rikta Nayak", 
+                    "Rohit Bhagat", "Ronit Banerjee", "Sabyasachi Patra", "Sananda Dutta", "Satyam Sinha", 
+                    "Shayan Shome", "Shilpi Nag", "Sk Hazikul Alam", "Subhadeep Kumbhakar", "Sudip Mete", 
+                    "Sudipta Koner", "Sudipto Nag", "Suman Pramanick"
+                ];

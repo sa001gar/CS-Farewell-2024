@@ -20,13 +20,13 @@
             font-family: "Tangerine", cursive;
             font-weight: 400;
             font-style: normal;
-            }
+        }
 
         .tangerine-bold {
             font-family: "Tangerine", cursive;
             font-weight: 700;
             font-style: normal;
-            }
+        }
 
         :root {
             --color-env: #0077B2;
@@ -257,6 +257,8 @@
             color: #fff;
         }
 
+
+
         .view-full {
             margin-top: 10px;
             font-weight: 800;
@@ -360,13 +362,15 @@
 <body class="bg-blue-100">
     <div class="container text-center mt-12">
         <h1 class="text-4xl font-bold text-gray-800 mb-6">Farewell Invitation</h1>
-        <p class="text-4xl text-gray-600 mb-8 tangerine-bold">Saying goodbye is never easy, but let's make it a little sweeter for our
+        <p class="text-4xl text-gray-600 mb-8 tangerine-bold">Saying goodbye is never easy, but let's make it a little
+            sweeter for our
             <strong class="text-yellow-700"> Dear Seniors.</strong>
         </p>
 
         <!-- // Stage for new commit -->
         <div class="text-center">
-            <p class="text-lg text-gray-600 mb-8" "> You are invited <br> <strong class="text-yellow-700 text-2xl">Dear <span id="namePlaceholder"></span></strong><br></p>
+            <p class="text-lg text-gray-600 mb-8" "> You are invited <br> <strong class=" text-yellow-700 text-2xl">
+                Dear, <span id="namePlaceholder"></span></strong><br></p>
         </div>
 
 
@@ -392,6 +396,7 @@
             <button id="open">Open</button>
             <button id="reset">Reset</button>
             <button id="viewFull" class="view-full">View Full Invitation</button>
+
         </div>
 
         <!-- Modal for Full Invitation -->
@@ -407,6 +412,14 @@
         <!-- <script src="/src/script.js"></script> -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {
+                const validNames = [
+                    "Aniket Das", "Arnab Laha", "Atika Tasnim", "Ayan Pal", "Ditu Dey",
+                    "Iradri Das", "Jeet Biswas", "Kartick Saren", "Prosenjit Mondal", "Rikta Nayak",
+                    "Rohit Bhagat", "Ronit Banerjee", "Sabyasachi Patra", "Sananda Dutta", "Satyam Sinha",
+                    "Shayan Shome", "Shilpi Nag", "Sk Hazikul Alam", "Subhadeep Kumbhakar", "Sudip Mete",
+                    "Sudipta Koner", "Sudipto Nag", "Suman Pramanick"
+                ];
+
                 var envelope = document.getElementById("envelope");
                 var letter = document.getElementById("letter");
                 var btnOpen = document.getElementById("open");
@@ -414,6 +427,7 @@
                 var btnViewFull = document.getElementById("viewFull");
                 var modal = document.getElementById("fullInvitationModal");
                 var closeModal = document.getElementById("closeModal");
+                var namePlaceholder = document.getElementById("namePlaceholder");
 
                 function openEnvelope() {
                     envelope.classList.add("open");
@@ -434,8 +448,6 @@
                 btnReset.addEventListener("click", closeEnvelope);
                 letter.addEventListener("click", openModal);
 
-
-
                 btnViewFull.addEventListener("click", function () {
                     modal.style.display = "flex";
                 });
@@ -452,13 +464,14 @@
 
                 var urlParams = new URLSearchParams(window.location.search);
                 var name = urlParams.get('name');
-                if (name) {
+
+                if (name && validNames.includes(name)) {
                     namePlaceholder.textContent = name;
                 } else {
-                    namePlaceholder.textContent = 'Guest'; // Default name if not provided
+                    window.location.href = '/404.html'; // Redirect to a 404 page if the name is not valid
                 }
-
             });
+
         </script>
 </body>
 
