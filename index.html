@@ -13,6 +13,21 @@
         /* Tailwind Customization */
         @import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
 
+        /* Importing a font  */
+        @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+        .tangerine-regular {
+            font-family: "Tangerine", cursive;
+            font-weight: 400;
+            font-style: normal;
+            }
+
+        .tangerine-bold {
+            font-family: "Tangerine", cursive;
+            font-weight: 700;
+            font-style: normal;
+            }
+
         :root {
             --color-env: #0077B2;
             --color-env2: #005a86;
@@ -346,8 +361,16 @@
     <div class="container text-center mt-12">
         <h1 class="text-4xl font-bold text-gray-800 mb-6">Farewell Invitation</h1>
         <p class="text-lg text-gray-600 mb-8 ">Saying goodbye is never easy, but let's make it a little sweeter for our
-            <strong class="text-yellow-700"> Dear Seniors.</strong> You're invited!
+            <strong class="text-yellow-700"> Dear Seniors.</strong>
         </p>
+
+        <!-- // Stage for new commit -->
+        <div class="text-center">
+            <p class="text-lg text-gray-600 mb-8" "> You are invited <br> <strong class="text-yellow-700 text-2xl">Dear <span id="namePlaceholder"></span></strong><br></p>
+        </div>
+
+
+
         <div class="envlope-wrapper">
             <div id="envelope" class="close">
                 <div class="front flap"></div>
@@ -426,6 +449,15 @@
                         modal.style.display = "none";
                     }
                 });
+
+                var urlParams = new URLSearchParams(window.location.search);
+                var name = urlParams.get('name');
+                if (name) {
+                    namePlaceholder.textContent = name;
+                } else {
+                    namePlaceholder.textContent = 'Guest'; // Default name if not provided
+                }
+
             });
         </script>
 </body>
