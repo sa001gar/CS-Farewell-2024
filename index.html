@@ -410,8 +410,8 @@
         </div>
 
         <footer
-  class="flex flex-row flex-wrap items-center justify-center w-full py-6 text-center border-t gap-y-6 gap-x-12 border-blue-gray-50 md:justify-between">
-  <p class="block font-sans text-base antialiased font-normal  leading-relaxed text-blue-gray-900">
+  class="flex flex-row flex-wrap items-center justify-center w-full py-6 text-center border-t gap-y-6 gap-x-12 border-blue-gray-50 md:justify-center">
+  <p class="block font-sans text-base antialiased font-normal text-center leading-relaxed text-blue-gray-900">
     © 2024 CS Dept. Mankar College
   </p>
         </footer>
@@ -424,7 +424,7 @@
                     "Iradri Das", "Jeet Biswas", "Kartick Saren", "Prosenjit Mondal", "Rikta Nayak",
                     "Rohit Bhagat", "Ronit Banerjee", "Sabyasachi Patra", "Sananda Dutta", "Satyam Sinha",
                     "Shayan Shome", "Shilpi Nag", "Sk Hazikul Alam", "Subhadeep Kumbhakar", "Sudip Mete",
-                    "Sudipta Koner", "Sudipto Nag", "Suman Pramanick"
+                    "Sudipta Koner", "Sudipto Nag", "Suman Pramanick","Guest User"
                 ];
 
                 var envelope = document.getElementById("envelope");
@@ -477,6 +477,11 @@
                 } else {
                     window.location.href = '/CS-Farewell-2024/404.html'; // Redirect to a 404 page if the name is not valid
                 }
+
+                // Disable right-click
+                document.addEventListener('contextmenu', function (e) {
+                    e.preventDefault();
+                });
             });
 
         </script>
