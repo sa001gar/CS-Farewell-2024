@@ -76,7 +76,7 @@
      top: 5%;
      border-radius: var(--env-border-radius);
      box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
-     background-image: url('media/letter.jpg');
+     background-image: url('/CS-Farewell-2024/letter.jpg');
      background-size: cover;
      background-position: center;
      display: flex;
