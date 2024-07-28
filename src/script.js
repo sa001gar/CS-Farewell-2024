@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const validNames = [
+        "Aniket Das", "Arnab Laha", "Atika Tasnim", "Ayan Pal", "Ditu Dey",
+        "Iradri Das", "Jeet Biswas", "Kartick Saren", "Prosenjit Mondal", "Rikta Nayak",
+        "Rohit Bhagat", "Ronit Banerjee", "Sabyasachi Patra", "Sananda Dutta", "Satyam Sinha",
+        "Shayan Shome", "Shilpi Nag", "Sk Hazikul Alam", "Subhadeep Kumbhakar", "Sudip Mete",
+        "Sudipta Koner", "Sudipto Nag", "Suman Pramanick", "Guest User"
+    ];
+
     var envelope = document.getElementById("envelope");
     var letter = document.getElementById("letter");
     var btnOpen = document.getElementById("open");
@@ -6,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var btnViewFull = document.getElementById("viewFull");
     var modal = document.getElementById("fullInvitationModal");
     var closeModal = document.getElementById("closeModal");
+    var namePlaceholder = document.getElementById("namePlaceholder");
 
     function openEnvelope() {
         envelope.classList.add("open");
@@ -26,8 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
     btnReset.addEventListener("click", closeEnvelope);
     letter.addEventListener("click", openModal);
 
-
-
     btnViewFull.addEventListener("click", function () {
         modal.style.display = "flex";
     });
@@ -44,10 +51,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var urlParams = new URLSearchParams(window.location.search);
     var name = urlParams.get('name');
-    if (name) {
+
+    if (name && validNames.includes(name)) {
         namePlaceholder.textContent = name;
     } else {
-        namePlaceholder.textContent = 'Guest'; // Default name if not provided
+        window.location.href = '/CS-Farewell-2024/404.html'; // Redirect to a 404 page if the name is not valid
     }
 
+    // Disable right-click
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
 });

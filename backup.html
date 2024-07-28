@@ -360,7 +360,7 @@
 </head>
 
 <body class="bg-blue-100">
-    <div class="container text-center mt-12">
+    <div class="container text-center mt-12 p-2">
         <h1 class="text-4xl font-bold text-gray-800 mb-6">Farewell Invitation</h1>
         <p class="text-4xl text-gray-600 mb-8 tangerine-bold">Saying goodbye is never easy, but let's make it a little
             sweeter for our
@@ -394,7 +394,7 @@
         </div>
         <div class="reset">
             <button id="open">Open</button>
-            <button id="reset">Reset</button>
+            <button id="reset">Close</button>
             <button id="viewFull" class="view-full">View Full Invitation</button>
 
         </div>
@@ -409,6 +409,13 @@
             </div>
         </div>
 
+        <footer
+  class="flex flex-row flex-wrap items-center justify-center w-full py-6 text-center border-t gap-y-6 gap-x-12 border-blue-gray-50 md:justify-center">
+  <p class="block font-sans text-base antialiased font-normal text-center leading-relaxed text-blue-gray-900">
+    © 2024 CS Dept. Mankar College
+  </p>
+        </footer>
+
         <!-- <script src="/src/script.js"></script> -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {
@@ -417,7 +424,7 @@
                     "Iradri Das", "Jeet Biswas", "Kartick Saren", "Prosenjit Mondal", "Rikta Nayak",
                     "Rohit Bhagat", "Ronit Banerjee", "Sabyasachi Patra", "Sananda Dutta", "Satyam Sinha",
                     "Shayan Shome", "Shilpi Nag", "Sk Hazikul Alam", "Subhadeep Kumbhakar", "Sudip Mete",
-                    "Sudipta Koner", "Sudipto Nag", "Suman Pramanick"
+                    "Sudipta Koner", "Sudipto Nag", "Suman Pramanick","Guest User"
                 ];
 
                 var envelope = document.getElementById("envelope");
@@ -468,8 +475,13 @@
                 if (name && validNames.includes(name)) {
                     namePlaceholder.textContent = name;
                 } else {
-                    window.location.href = '/404.html'; // Redirect to a 404 page if the name is not valid
+                    window.location.href = '/CS-Farewell-2024/404.html'; // Redirect to a 404 page if the name is not valid
                 }
+
+                // Disable right-click
+                document.addEventListener('contextmenu', function (e) {
+                    e.preventDefault();
+                });
             });
 
         </script>
