@@ -10,10 +10,12 @@
   <style>
     @import 'https://fonts.googleapis.com/css?family=Inconsolata';
 
+    /* Ensure the HTML document takes up the full height */
     html {
       min-height: 100%;
     }
 
+    /* Styling for the body, including background images and font */
     body {
       box-sizing: border-box;
       height: 100%;
@@ -24,11 +26,10 @@
       font-family: 'Inconsolata', Helvetica, sans-serif;
       font-size: 1.5rem;
       color: rgba(128, 255, 128, 0.8);
-      text-shadow:
-        0 0 1ex rgba(51, 255, 51, 1),
-        0 0 2px rgba(255, 255, 255, 0.8);
+      text-shadow: 0 0 1ex rgba(51, 255, 51, 1), 0 0 2px rgba(255, 255, 255, 0.8);
     }
 
+    /* Styling for the noise effect */
     .noise {
       pointer-events: none;
       position: absolute;
@@ -41,16 +42,13 @@
       opacity: .02;
     }
 
+    /* Styling for the overlay effect */
     .overlay {
       pointer-events: none;
       position: absolute;
       width: 100%;
       height: 100%;
-      background:
-        repeating-linear-gradient(180deg,
-          rgba(0, 0, 0, 0) 0,
-          rgba(0, 0, 0, 0.3) 50%,
-          rgba(0, 0, 0, 0) 100%);
+      background: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
       background-size: auto 4px;
       z-index: 1;
     }
@@ -66,16 +64,12 @@
       bottom: 0;
       width: 100%;
       height: 100%;
-      background-image: linear-gradient(0deg,
-          transparent 0%,
-          rgba(32, 128, 32, 0.2) 2%,
-          rgba(32, 128, 32, 0.8) 3%,
-          rgba(32, 128, 32, 0.2) 3%,
-          transparent 100%);
+      background-image: linear-gradient(0deg, transparent 0%, rgba(32, 128, 32, 0.2) 2%, rgba(32, 128, 32, 0.8) 3%, rgba(32, 128, 32, 0.2) 3%, transparent 100%);
       background-repeat: no-repeat;
       animation: scan 7.5s linear 0s infinite;
     }
 
+    /* Animation for the scanning effect */
     @keyframes scan {
       0% {
         background-position: 0 -100vh;
@@ -87,6 +81,7 @@
       }
     }
 
+    /* Styling for the terminal container */
     .terminal {
       box-sizing: inherit;
       position: absolute;
@@ -97,30 +92,17 @@
       text-transform: uppercase;
     }
 
+    /* Styling for the output text */
     .output {
       color: rgba(128, 255, 128, 0.8);
-      text-shadow:
-        0 0 1px rgba(51, 255, 51, 0.4),
-        0 0 2px rgba(255, 255, 255, 0.8);
+      text-shadow: 0 0 1px rgba(51, 255, 51, 0.4), 0 0 2px rgba(255, 255, 255, 0.8);
     }
 
     .output::before {
       content: "> ";
     }
 
-    /*
-.input {
-  color: rgba(192, 255, 192, 0.8);
-  text-shadow:
-      0 0 1px rgba(51, 255, 51, 0.4),
-      0 0 2px rgba(255, 255, 255, 0.8);
-}
-
-.input::before {
-  content: "$ ";
-}
-*/
-
+    /* Styling for links */
     a {
       color: #fff;
       text-decoration: none;
@@ -134,11 +116,12 @@
       content: "]";
     }
 
+    /* Styling for the error code */
     .errorcode {
       color: white;
     }
 
-    /* Styling For Button  */
+    /* Styling for the animated button */
     .animated-button {
       position: relative;
       display: flex;
@@ -230,15 +213,18 @@
 </head>
 
 <body>
+  <!-- Noise overlay for retro effect -->
   <div class="noise"></div>
+  <!-- Scanning overlay effect -->
   <div class="overlay"></div>
+  <!-- Terminal content -->
   <div class="terminal">
     <h1>Error <span class="errorcode">404</span></h1>
     <p class="output">The Page is Designed to invite the Students of <strong
         style="color:white;">Batch(2021-2024)</strong> --> CS DEPARTMENT,Mankar College</p>
-    <p class="output">Please don't try to manupulate the url. </p>
+    <p class="output">Please don't try to manipulate the URL.</p>
     <p class="output">Good luck.</p>
-    <!-- <button onclick="history.back()">return to the homepage.</button> -->
+    <!-- Animated "Go Back" button -->
     <button class="animated-button" onclick="history.back()">
       <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -253,9 +239,15 @@
         </path>
       </svg>
     </button>
-
   </div>
 
+
+  <script>
+    // Disable right-click on the page
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  </script>
 </body>
 
 </html>

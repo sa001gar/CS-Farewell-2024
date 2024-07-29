@@ -6,28 +6,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farewell Invitation - CS DEPARTMENT</title>
+    <!-- Including Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Favicon for the page -->
     <link rel="shortcut icon" href="good-bye.png" type="image/x-icon">
+    <!-- Linking to an external CSS file for additional styles -->
     <link rel="stylesheet" href="src/style.css">
-    
 </head>
 
 <body class="bg-blue-100">
     <div class="container text-center mt-12 p-2">
+        <!-- Main heading of the invitation -->
         <h1 class="text-4xl font-bold text-gray-800 mb-6">Farewell Invitation</h1>
+        <!-- Subheading with a message -->
         <p class="text-4xl text-gray-600 mb-8 tangerine-bold">Saying goodbye is never easy, but let's make it a little
             sweeter for our
             <strong class="text-yellow-700"> Dear Seniors.</strong>
         </p>
 
-        <!-- // Stage for new commit -->
+        <!-- Invitation text with a placeholder for the name -->
         <div class="text-center">
-            <p class="text-lg text-gray-600 mb-8" "> You are invited <br> <strong class=" text-yellow-700 text-2xl">
-                Dear, <span id="namePlaceholder"></span></strong><br></p>
+            <p class="text-lg text-gray-600 mb-8">You are invited <br> <strong class="text-yellow-700 text-2xl">
+                    Dear, <span id="namePlaceholder"></span></strong><br></p>
         </div>
 
-
-
+        <!-- Envelope animation for the invitation -->
         <div class="envlope-wrapper">
             <div id="envelope" class="close">
                 <div class="front flap"></div>
@@ -45,14 +48,15 @@
                 </div>
             </div>
         </div>
+
+        <!-- Buttons to interact with the envelope animation -->
         <div class="reset">
             <button id="open">Open</button>
             <button id="reset">Close</button>
             <button id="viewFull" class="view-full">View Full Invitation</button>
-
         </div>
 
-        <!-- Modal for Full Invitation -->
+        <!-- Modal for viewing the full invitation -->
         <div id="fullInvitationModal" class="modal">
             <div class="modal-content">
                 <span class="close-modal" id="closeModal">&times;</span>
@@ -62,6 +66,7 @@
             </div>
         </div>
 
+        <!-- Footer section with copyright information -->
         <footer
             class="flex flex-row flex-wrap items-center justify-center w-full py-6 text-center border-t gap-y-6 gap-x-12 border-blue-gray-50 md:justify-center">
             <p class="block font-sans text-base antialiased font-normal text-center leading-relaxed text-blue-gray-900">
@@ -69,8 +74,8 @@
             </p>
         </footer>
 
+        <!-- Linking to an external JavaScript file for functionalities -->
         <script src="src/script.js"></script>
-        
 </body>
 
 </html>
