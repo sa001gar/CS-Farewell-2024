@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (name && validNames.includes(name)) {
         namePlaceholder.textContent = name;
     } else {
-        window.location.href = '404'; // Redirect to a 404 page if the name is not valid
+        window.location.href = '404.html'; // Redirect to a 404 page if the name is not valid
     }
 
     // Disable right-click
