@@ -36,17 +36,20 @@ document.addEventListener("DOMContentLoaded", function () {
   var modal = document.getElementById("fullInvitationModal");
   var closeModal = document.getElementById("closeModal");
   var namePlaceholder = document.getElementById("namePlaceholder");
+  var tip = document.getElementById("tip");
 
   // Function to open the envelope
   function openEnvelope() {
     envelope.classList.add("open");
     envelope.classList.remove("close");
+    tip.style.display = "none"; // Hide the tip when envelope is opened
   }
 
   // Function to close the envelope
   function closeEnvelope() {
     envelope.classList.add("close");
     envelope.classList.remove("open");
+    tip.style.display = "block"; // Show the tip when envelope is closed
   }
 
   // Function to open the modal
