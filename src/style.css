@@ -17,6 +17,17 @@
   font-style: normal;
 }
 
+/* Farewell font */
+@font-face {
+  font-family: 'Lipishree';
+  src: url('fonts/Lipishree Unicode.ttf') format('truetype');
+}
+
+.farewell-font {
+  font-family: 'Lipishree', sans-serif;
+  color: #06507b;
+}
+
 /* Root variables for common styles */
 :root {
   --color-env: #0077b2;
